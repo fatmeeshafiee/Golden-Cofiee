@@ -1,0 +1,119 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
+
+@theme {
+  --color-brown-900: #634832;
+  --color-brown-600: #967259;
+  --color-brown-300: #dbc1ac;
+  --color-brown-100: #ece0d1;
+  --color-background: #f3f4f6;
+  --color-mega: #fab873;
+
+  --shadow-light: 0px 1px 10px 0px #0000000d;
+  --shadow-dark: 0px 1px 10px 0px #0000000d;
+
+  --rounded-4xl: 2rem;
+
+  --font-Dana: "Dana";
+  --font-DanaMedium: "Dana Medium";
+  --font-DemiBold: "Dana DemiBold";
+  --font-MorabbaLight: "Morabba Light";
+  --font-MorabbaMedium: "Morabba Medium";
+  --font-MorabbaBold: "Morabba Bold";
+
+  /* --tracking-tightest: -0.065em; */
+  --tracking-tightest: -0.065em;
+  --breakpoint-xs: 480px;
+}
+@utility container {
+  @apply mx-auto px-4 lg:px-2.5;
+}
+@layer utilities {
+  .bg-home-mobile {
+    background-image: url();
+  }
+}
+@layer base {
+  body {
+    background-image: url(/public/image/headerBgDesktop.webp);
+    background-repeat: no-repeat;
+    /* width: 100%; */
+  }
+}
+@font-face {
+  font-family: "Dana"; /*400*/
+  src: local("Dana"),
+    url(/public/fonts/Dana/woff2/DanaFaNum-Regular.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Dana Medium"; /*500*/
+  src: local("Dana Medium"),
+    url(/public/fonts/Dana/woff2/DanaFaNum-Medium.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Dana DemiBold"; /*600*/
+  src: local("Dana DemiBold"),
+    url(/public/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Morabba Light";
+  src: local("Morabba Light"),
+    url(/public/fonts/Morabba/woff2/Morabba-Light.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Morabba Medium";
+  src: local("Morabba Medium"),
+    url(/public/fonts/Morabba/woff2/Morabba-Medium.woff2) format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Morabba Bold";
+  src: local("Morabba Bold"),
+    url(/public/fonts/Morabba/woff2/Morabba-Bold.woff2) format("woff2");
+  font-display: swap;
+}
+@layer components {
+  .submenu__item--active::after {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: #fdba74;
+  }
+
+  .submenu__item--active {
+    padding-right: 10px;
+    position: relative;
+    color: #fdba74;
+  }
+  .overlay {
+    @apply md:hidden bg-black/40 fixed inset-0 w-full h-full z-10 invisible opacity-0 transition-all;
+  }
+  .overlay--visible {
+    @apply visible opacity-100;
+  }
+  /* .submenu {
+    visibility: hidden;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    color: black;
+    background-color: #fdba74;
+  }
+  .submenu--open {
+    display: flex;
+    color: black;
+  } */
+}
