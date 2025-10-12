@@ -17,7 +17,7 @@
       }
     </script>
   </head>
-  <body class="font-Dana bg-background dark:bg-zinc-800">
+  <body class="font-Dana bg-background dark:bg-zinc-800 h-2000">
     <!-- All App Icons -->
     <svg class="hidden">
       <symbol
@@ -281,13 +281,22 @@
           d="m19.5 8.25-7.5 7.5-7.5-7.5"
         />
       </symbol>
+      <symbol
+        id="curve"
+        width="100"
+        height="22"
+        viewBox="0 0 100 22"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M50 0C69 0 81 22 100 22L0 22C18.75 22 31 0 50 0Z" />
+      </symbol>
     </svg>
-
     <!-- App Header -->
 
     <!-- header of desktop -->
     <header
-      class="fixed top-9 right-0 left-0 hidden md:flex w-[98%] lg:w-[90%] h-24 mx-auto bg-black/50 rounded-3xl backdrop-blur-[6px] py-5 px-5 lg:px-10"
+      class="fixed z-50 top-9 right-0 left-0 hidden md:flex w-[98%] lg:w-[90%] h-24 mx-auto bg-black/50 rounded-3xl backdrop-blur-[6px] py-5 px-5 lg:px-10"
     >
       <div class="flex items-center w-full justify-between">
         <!-- logo and menu -->
@@ -742,13 +751,15 @@
     <!-- App Main -->
     <main>
       <section
-        class="home h-50 xs:h-auto xs:aspect-2/1 md:aspect-auto bg-[url(/public/image/headerBgMobile.webp)] md:bg-[url(/public/image/headerBgDesktop.webp)] bg-no-repeat bg-cover"
+        class="relative overflow-y-hidden home h-50 xs:h-auto xs:aspect-2/1 md:aspect-auto bg-[url(/public/image/headerBgMobile.webp)] md:bg-[url(/public/image/headerBgDesktop.webp)] bg-no-repeat bg-cover"
       >
         <div
           class="container h-full flex justify-end items-center md:min-h-screen"
         >
           <div class="text-white">
-            <h2 class="md:text-6xl text-2xl font-MorabbaBold mb-0.5 md:mb-2">
+            <h2
+              class="md:text-6xl/[62px] text-2xl font-MorabbaBold mb-0.5 md:mb-2"
+            >
               قهوه عربیکا تانزانیا
             </h2>
             <span class="md:text-5xl text-xl md:py-2.5 font-MorabbaLight"
@@ -764,6 +775,28 @@
               است که در نواحی مختلف کمربند قهوه کشت میشود.
             </p>
           </div>
+        </div>
+        <!-- Curve svg -->
+        <svg
+          class="absolute text-gray-100 dark:text-zinc-800 bottom-0 right-0 left-0 mx-auto w-25 h-5.5 md:flex hidden"
+        >
+          <use href="#curve"></use>
+        </svg>
+        <!-- Circle Element -->
+        <div
+          class="circle circle--lg circle--main translate-y-2/4 md:flex hidden"
+        >
+          <div class="circle circle--md">
+            <div class="circle circle--sm"></div>
+          </div>
+        </div>
+        <!-- chevron down svg -->
+        <div
+          class="w-8 h-8 rounded-full border-2 border-orange-300 md:flex hidden items-center justify-center relative bottom-0 right-0 left-0 mx-auto"
+        >
+          <svg class="text-zinc-700 dark:text-white w-4 h-4">
+            <use href="#chevron-down"></use>
+          </svg>
         </div>
       </section>
     </main>
