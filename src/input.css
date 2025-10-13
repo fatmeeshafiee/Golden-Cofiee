@@ -119,4 +119,19 @@
   .circle--sm {
     @apply w-23.5 h-23.5 border-white/80;
   }
+  html.dark .products {
+    background: url(/public/image/body-bg.png);
+  }
+  @media screen and (min-width: 1024px) {
+    .products {
+      background: linear-gradient(
+          rgba(243, 244, 246, 0.65),
+          rgba(243, 244, 246, 0.65)
+        ),
+        url(/public/image/body-bg.png);
+      height: 900px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+  }
 }
